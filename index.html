@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap -->
+
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+
+    <title>Budget App</title>
+</head>
+
+<body>
+    <div class="container-fluid h-100">
+
+        <div class="row h-100">
+
+            <!-- Sidebar column -->
+            <div class="col-4"></div>
+
+            <!-- Sidebar -->
+            <div class="col-4 bg-darker fixed">
+
+                <!-- Sidebar -top -->
+                <div class="d-flex flex-column justify-content-around mt-5 h-25">
+                    <div>
+                        <div class="d-flex justify-content-center">
+                            <h5 class="text-light">Available Budget in <span class="date">%Month%</span></h5>
+                        </div>
+                        <div class="container d-flex justify-content-center mt-3 mb-4">
+                            <h1 class="budget-value text-light">+ 2,521.14</h1>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="col-10 ml-auto mr-auto mb-2 d-flex bd-highlight justify-content-between bg-info">
+                            <div class="p-2 w-50">INCOME</div>
+                            <div class="income-total p-2 text-light">+ 2,100.00</div>
+                        </div>
+                        <div class="col-10 m-auto d-flex bd-highlight justify-content-between bg-danger">
+                            <div class="p-2 w-50">EXPENSES</div>
+                            <div class="d-flex">
+                                <div class="expenses-total p-2 text-light">- 1,100.34</div>
+                                <div class="expenses-percentage percentage text-light m-auto">51%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar bottom -->
+                <div class="d-flex flex-column justify-content-around h-75">
+                    <div>
+                        <form>
+                            <div class="form-row">
+                                <div class="col-2">
+                                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                    <select class="add-type custom-select mr-sm-2 bg-dark text-light" id="inlineFormCustomSelect">
+                                        <option value="inc">+</option>
+                                        <option value="exp">-</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="add-description form-control bg-dark text-light" placeholder="Description">
+                                </div>
+                                <div class="col-4">
+                                    <input type="number" class="add-value form-control bg-dark text-light" placeholder="Value">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="d-flex justify-content-center mt-5">
+                            <button type="button" class="add-btn btn btn-outline-info">&#10003;</button>
+                        </div>
+                    </div>
+                    <p class="row text-secondary justify-content-center"><small>Budget App - Adrian Füzi</small></p>
+                </div>
+
+            </div>
+            <!-- List container -->
+            <div class="list-container col d-flex p-0">
+                <!-- Income column -->
+                <div class="col-6 bg-dark pt-3">
+                    <div class="container d-flex justify-content-center">
+                        <h5 class="text-info bold pb-3">INCOME</h5>
+                    </div>
+                    <!-- Income items list -->
+                    <ul class="income-list list-group list-group-flush">
+                        <!-- Income items -->
+
+                        <!-- <li class="d-flex justify-content-between list-group-item  bg-dark" id="inc-0">
+                            <div class="description text-light mt-auto mb-auto">Salary</div>
+                            <div class="d-flex">
+                                <div class="text-info mt-auto mb-auto">2,330.87</div>
+                                <button type="button" class="btn btn-outline-danger ml-3">&#10005;</button>
+                            </div>
+                        </li> -->
+
+                    </ul>
+
+                </div>
+
+                <!-- Expenses column -->
+                <div class="col-6 bg-dark pt-3">
+                    <div class="container d-flex justify-content-center">
+                        <h5 class="text-danger-2 pb-3 bold">EXPENSES</h5>
+                    </div>
+                    <!-- Expenses items list -->
+                    <ul class="expenses-list list-group list-group-flush">
+                        <!-- Expenses Items -->
+                        
+                        <!-- <li class="d-flex justify-content-between list-group-item bg-dark" id="exp-0">
+                            <div class="description text-light mt-auto mb-auto">Rent</div>
+                            <div class="d-flex">
+                                <div class="text-danger-2 mt-auto mb-auto">1,100.43</div>
+                                <div class="item-percentage percentage text-light ml-2 mt-auto mb-auto">5%</div>
+                                <button type="button" class="delete-item btn btn-outline-danger ml-3">&#10005;</button>
+                            </div>
+                        </li> -->
+
+                    </ul>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+
+    <script src="./javascript/app.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+::selection {
+    background: #17A2B8;
+}
+
+select {
+    background: #17A2B8;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 300;
+}
+
+.bold {
+    font-weight: 400;
+}
+
+.fixed {
+    position: fixed;
+    height: 100%;
+}
+
+.bg-darker {
+    background-color: rgb(38, 42, 46);
+}
+
+.btn-outline-danger {
+    font-size: .7rem;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.btn-outline-info {
+    font-size: 1.5rem;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.income-total {
+    margin-right: 2.5rem;
+}
+
+.percentage {
+    width: 2.5rem;
+    height: 1.1rem;
+    padding: 0;
+    background-color: rgb(255, 81, 81);
+
+    font-size: .7rem;
+    text-align: center;
+    line-height: 1.5;
+    border-radius: 2px;
+}
+
+.list-group-item {
+    border-color: #686c70 !important;
+}
+
+.text-secondary {
+    font-size: .9rem;
+}
+
+.text-danger-2 {
+    color: rgb(255, 70, 70)
+}
+
+/* COLOR INCOME */
+
+.custom-select {
+    background: #17A2B8;
+    border-color: #17A2B8;
+}
+
+.custom-select:focus {
+    border-color: #17A2B8;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(23, 162, 184, 0.6);
+}
+
+.form-control {
+    border-color: #17A2B8;
+  }
+
+.form-control:focus {
+    border-color: #17A2B8;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(23, 162, 184, 0.6);
+  }
+
+/* COLOR EXPENSE */
+
+.form-control-red {
+    border-color: rgb(255, 70, 70);
+  }
+
+.form-control-red:focus {
+    border-color: #ff4646;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 70, 70, 0.6);
+  }
