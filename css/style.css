@@ -68,6 +68,10 @@ h1, h2, h3, h4, h5 {
     margin-right: 2.5rem;
 }
 
+.card {
+    border: none;
+}
+
 .percentage {
     width: 2.5rem;
     height: 1.1rem;

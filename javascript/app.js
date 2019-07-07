@@ -160,7 +160,8 @@ var UIController = (function() {
         percentageLabel: '.expenses-percentage',
         listContainer: '.list-container',
         itemPercentage: '.item-percentage',
-        dateLabel: '.date'
+        dateLabel: '.date',
+        budgetChart: '.budgetChart'
     };
 
     function formatNumber(number, type) {
@@ -174,7 +175,9 @@ var UIController = (function() {
 
         intiger = numberSplit[0];
         if (intiger.length > 3) {
-            intiger = intiger.substr(0, intiger.length - 3) + ',' + intiger.substr(intiger.length - 3, 3);
+            for (var i = 3; i < intiger.length; i += 4) {
+                intiger = intiger.substr(0, intiger.length - i) + ',' + intiger.substr(intiger.length - i, i);
+            }
         }
 
         decimal = numberSplit[1];
@@ -267,6 +270,40 @@ var UIController = (function() {
 
         },
 
+        displayChart: function(displayObj) {
+
+            var colors = ['#dc3545', '#17a2b8'];
+            var income = displayObj.totalIncome;
+            var expenses = displayObj.totalExpenses;
+
+            var chartOptions = {
+                cutoutPercentage: 80, 
+                legend: {display: false},
+            };
+
+            var chartData = {
+                labels: ['Expenses', 'Income'],
+                datasets: [
+                    {
+                        backgroundColor: colors.slice(0, 2),
+                        hoverBackgroundColor: colors,
+                        borderWidth: 0,
+                        data: [expenses, income]
+                    }
+                ]
+            };
+
+            var chart = document.querySelector(DOMstrings.budgetChart);
+            if (chart) {
+                new Chart(chart, {
+                    type: 'pie',
+                    data: chartData,
+                    options: chartOptions
+                });
+            }
+
+        },
+
         displayPercentages: function(percentages) {
 
             var fields = document.querySelectorAll(DOMstrings.itemPercentage);
@@ -348,6 +385,7 @@ var appController = (function(connectBudgetCtrl, connectUICtrl) {
         // 2. Display budget on the UI
         console.log(budget);
         connectUICtrl.displayBudget(budget);
+        connectUICtrl.displayChart(budget);
 
     };
 
